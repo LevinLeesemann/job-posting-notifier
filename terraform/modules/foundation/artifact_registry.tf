@@ -1,14 +1,13 @@
 resource "google_artifact_registry_repository" "docker" {
-  repository_id      = var.project_name
-  format             = "DOCKER"
+  repository_id = var.project_name
+  format        = "DOCKER"
 
   cleanup_policies {
     id     = "keep-latest"
     action = "KEEP"
 
     most_recent_versions {
-      package_name = "*"
-      keep_count   = 1
+      keep_count = 1
     }
   }
 
@@ -17,8 +16,7 @@ resource "google_artifact_registry_repository" "docker" {
     action = "DELETE"
 
     condition {
-      package_name = "*"
-      tag_state    = "ANY"
+      tag_state = "ANY"
     }
   }
 }
