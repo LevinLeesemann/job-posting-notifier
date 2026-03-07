@@ -21,7 +21,7 @@ public class AppleClient extends Client<AppleJob> {
                 bigQuery,
                 httpService,
                 notificationService,
-                List.of("manager", "research", "testing", "hardware", "site reliability"),
+                List.of("manager", "research", "testing", "hardware", "site reliability", "ml"),
                 List.of("engineer")
         );
     }
