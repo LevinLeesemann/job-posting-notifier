@@ -126,15 +126,15 @@ jobs:
             pipeline:
               - '.github/**'
 
-      - name: Run action
-        if: ${{ steps.changes.outputs.application == 'true' || steps.changes.outputs.infrastructure == 'true' || steps.changes.outputs.pipeline == 'true' }}
-        uses: ./.github/actions/deploy_terraform_resource
-        with:
-          module: runtime
-        env:
-          GCP_CREDENTIALS_JSON: ${{ secrets.GCP_CREDENTIALS_JSON }}
-          GCP_PROJECT_ID: ${{ secrets.GCP_PROJECT_ID }}
-          IMAGE_NAME: ${{ env.IMAGE_NAME }}
-          NTFY_TOPIC: ${{ secrets.NTFY_TOPIC }}
-          PROJECT_NAME: ${{ env.PROJECT_NAME }}
-          REGION: ${{ env.REGION }}
+      # - name: Run action
+      #   if: ${{ steps.changes.outputs.application == 'true' || steps.changes.outputs.infrastructure == 'true' || steps.changes.outputs.pipeline == 'true' }}
+      #   uses: ./.github/actions/deploy_terraform_resource
+      #   with:
+      #     module: runtime
+      #   env:
+      #     GCP_CREDENTIALS_JSON: ${{ secrets.GCP_CREDENTIALS_JSON }}
+      #     GCP_PROJECT_ID: ${{ secrets.GCP_PROJECT_ID }}
+      #     IMAGE_NAME: ${{ env.IMAGE_NAME }}
+      #     NTFY_TOPIC: ${{ secrets.NTFY_TOPIC }}
+      #     PROJECT_NAME: ${{ env.PROJECT_NAME }}
+      #     REGION: ${{ env.REGION }}
